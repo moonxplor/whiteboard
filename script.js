@@ -74,16 +74,51 @@ brushSize.addEventListener('input', () => {
     sizeDisplay.textContent = `${lineWidth}px`;
 });
 
-// Drawing functions
+// Get coordinates from mouse or touch event
+function getCoordinates(e) {
+    const rect = canvas.getBoundingClientRect();
+    let x, y;
+    
+    if (e.touches && e.touches.length > 0) {
+        x = e.touches[0].clientX - rect.left;
+        y = e.touches[0].clientY - rect.top;
+    } else {
+        x = e.clientX - rect.left;
+        y = e.clientY - rect.top;
+    }
+    
+    return { x, y };
+}
+
+// Drawing functions - Mouse events
 canvas.addEventListener('mousedown', startDrawing);
 canvas.addEventListener('mousemove', draw);
 canvas.addEventListener('mouseup', stopDrawing);
 canvas.addEventListener('mouseleave', stopDrawing);
 
+// Drawing functions - Touch events
+canvas.addEventListener('touchstart', (e) => {
+    e.preventDefault();
+    startDrawing(e);
+});
+
+canvas.addEventListener('touchmove', (e) => {
+    e.preventDefault();
+    draw(e);
+});
+
+canvas.addEventListener('touchend', (e) => {
+    e.preventDefault();
+    stopDrawing();
+});
+
+canvas.addEventListener('touchcancel', (e) => {
+    e.preventDefault();
+    stopDrawing();
+});
+
 function startDrawing(e) {
-    const rect = canvas.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+    const { x, y } = getCoordinates(e);
 
     if (tool === 'text') {
         const text = prompt('Enter text:');
@@ -104,9 +139,7 @@ function startDrawing(e) {
 function draw(e) {
     if (!isDrawing || tool === 'text') return;
 
-    const rect = canvas.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+    const { x, y } = getCoordinates(e);
 
     ctx.lineWidth = lineWidth;
     ctx.lineCap = 'round';
