@@ -12,18 +12,14 @@
             <button id="penBtn" class="tool-btn active" title="Pen">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg>
             </button>
-            
-            <button id="eraserBtn" class="tool-btn" title="Eraser">
+              <button id="eraserBtn" class="tool-btn" title="Eraser">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 21-4.3-4.3c-1-1-1-2.5 0-3.4l9.6-9.6c1-1 2.5-1 3.4 0l5.6 5.6c1 1 1 2.5 0 3.4L13 21"/><path d="M22 21H7"/></svg>
             </button>
-            
-            <button id="textBtn" class="tool-btn" title="Text">
+                   <button id="textBtn" class="tool-btn" title="Text">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" x2="15" y1="20" y2="20"/><line x1="12" x2="12" y1="4" y2="20"/></svg>
             </button>
-
-            <div class="divider"></div>
-
-            <div class="color-palette">
+          <div class="divider"></div>
+     <div class="color-palette">
                 <button class="color-btn active" style="background-color: #000000;" data-color="#000000"></button>
                 <button class="color-btn" style="background-color: #ffffff;" data-color="#ffffff"></button>
                 <button class="color-btn" style="background-color: #ff0000;" data-color="#ff0000"></button>
@@ -33,45 +29,33 @@
                 <button class="color-btn" style="background-color: #ff00ff;" data-color="#ff00ff"></button>
                 <button class="color-btn" style="background-color: #00ffff;" data-color="#00ffff"></button>
             </div>
-
             <div class="divider"></div>
-
             <input type="range" id="brushSize" min="1" max="20" value="3" title="Brush Size">
             <span id="sizeDisplay">3px</span>
-
             <div class="divider"></div>
-
             <button id="undoBtn" class="tool-btn" title="Undo">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7v6h6"/><path d="M21 17a9 9 0 0 0-9-9 9 9 0 0 0-6 2.3L3 13"/></svg>
-            </button>
-            
+            </button>      
             <button id="redoBtn" class="tool-btn" title="Redo">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 7v6h-6"/><path d="M3 17a9 9 0 0 1 9-9 9 9 0 0 1 6 2.3l3 2.7"/></svg>
             </button>
-
             <button id="clearBtn" class="tool-btn" title="Clear Canvas">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>
             </button>
-
             <div class="divider"></div>
-
             <button id="downloadBtn" class="tool-btn" title="Download">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
             </button>
-
             <label class="tool-btn" title="Upload Image">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" x2="12" y1="3" y2="15"/></svg>
                 <input type="file" id="uploadBtn" accept="image/*" style="display: none;">
             </label>
         </div>
-
-        <canvas id="whiteboard"></canvas>
-
-        <div class="footer">
+ <canvas id="whiteboard"></canvas>
+       <div class="footer">
             Share your whiteboard by downloading and sending the image to friends, or have them load it with the upload button
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
